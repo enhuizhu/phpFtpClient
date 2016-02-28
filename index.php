@@ -1,7 +1,9 @@
 <?php
-	phpinfo();
+	error_reporting(E_ALL | E_STRICT);
+	ini_set('display_errors', 1);
+	// phpinfo();
 	
-	die();
+	// die();
 	
 	require "vendor/autoload.php";
 	
@@ -14,3 +16,10 @@
 	}
 	
 	$ftp = new FTP($filePath);
+
+	$result = $ftp->listFiles("/");
+
+	echo "result are:";
+
+	var_dump($result);
+	// print_r($result);
